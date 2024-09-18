@@ -1,5 +1,6 @@
 package principal;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -11,7 +12,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Ejercicio1 extends JFrame {
-
+	
+	JLabel lblDatosIngre1 = new JLabel();
+	
+	
 	public Ejercicio1() {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -19,7 +23,7 @@ public class Ejercicio1 extends JFrame {
 		setLocation(350,350);
 		setTitle("Contactos ");
 		
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setBounds(42, 50, 53, 14);
@@ -49,9 +53,11 @@ public class Ejercicio1 extends JFrame {
 		        if (!Character.isLetter(nom)) {
 		        	nom1.consume();  
 		        }
-		        
+		   
 		    }
 		});
+	   
+	
 		frmtdtxtfldNombre.setBounds(169, 50, 140, 20);
 		getContentPane().add(frmtdtxtfldNombre);
 		
@@ -98,29 +104,65 @@ public class Ejercicio1 extends JFrame {
 		getContentPane().add(frmtdtxtfldFechaN);
 		
 		JButton btnMostrar = new JButton("Mostrar");
-		btnMostrar.setBounds(220, 170, 89, 30);
-		getContentPane().add(btnMostrar);
-		btnMostrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			//	falta condicion si se muestra o no
-                frmtdtxtfldNombre.setText("");
-                frmtdtxtfldApellido.setText("");
-                frmtdtxtfldTelefono.setText("");
-                frmtdtxtfldFechaN.setText("");
-             //   
+        btnMostrar.setBounds(220, 170, 89, 30);
+        getContentPane().add(btnMostrar);
+        btnMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                boolean allFieldsFilled = true;
                 
+                if (frmtdtxtfldNombre.getText().isEmpty()) {
+                    frmtdtxtfldNombre.setBackground(Color.RED);
+                    allFieldsFilled = false;
+                } else {
+                    frmtdtxtfldNombre.setBackground(Color.WHITE);
+                }
                 
-			}
-		});
-		
-		
-		
-		
-	}///
-
+                if (frmtdtxtfldApellido.getText().isEmpty()) {
+                    frmtdtxtfldApellido.setBackground(Color.RED);
+                    allFieldsFilled = false;
+                } else {
+                    frmtdtxtfldApellido.setBackground(Color.WHITE);
+                }
+                
+                if (frmtdtxtfldTelefono.getText().isEmpty()) {
+                    frmtdtxtfldTelefono.setBackground(Color.RED);
+                    allFieldsFilled = false;
+                } else {
+                    frmtdtxtfldTelefono.setBackground(Color.WHITE);
+                }
+                
+                if (frmtdtxtfldFechaN.getText().isEmpty()) {
+                    frmtdtxtfldFechaN.setBackground(Color.RED);
+                    allFieldsFilled = false;
+                } else {
+                    frmtdtxtfldFechaN.setBackground(Color.WHITE);
+                }
+                
+                if (allFieldsFilled) {
+                	
+                	String datos="Nom y ape: " + frmtdtxtfldNombre.getText() + " " +frmtdtxtfldApellido.getText()
+                	+ " - tel: " + frmtdtxtfldTelefono.getText() + " - Fecha " + frmtdtxtfldFechaN.getText();
+                	lblDatosIngre1.setBounds(32, 280, 450, 14);
+                	lblDatosIngre1.setText(datos);
+                	getContentPane().add(lblDatosIngre1);
+                	
+                	 lblDatosIngre1.revalidate();
+                     lblDatosIngre1.repaint();
+                	                	                 	
+                    frmtdtxtfldNombre.setText("");
+                    frmtdtxtfldApellido.setText("");
+                    frmtdtxtfldTelefono.setText("");
+                    frmtdtxtfldFechaN.setText("");
+                    
+                    datos="";
+                }
+            }
+        });
+    }
 public void cambiarvisibilidad(boolean estado) {
 		
 		setVisible(true);
 	}
+		}
 	
-}
+
