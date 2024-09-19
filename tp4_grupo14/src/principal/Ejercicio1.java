@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SpringLayout;
 
 public class Ejercicio1 extends JFrame {
 	
@@ -22,30 +23,30 @@ public class Ejercicio1 extends JFrame {
 		setSize(500,500);
 		setLocation(350,350);
 		setTitle("Contactos ");
-		
 		getContentPane().setLayout(null);
 		
-		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(42, 50, 53, 14);
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setBounds(101, 102, 53, 14);
 		getContentPane().add(lblNombre);
 		
-		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setBounds(42, 80, 53, 14);
+		JLabel lblApellido = new JLabel("Apellido:");
+		lblApellido.setBounds(101, 127, 53, 14);
 		getContentPane().add(lblApellido);
 		
-		JLabel lblTelefono = new JLabel("Teléfono");
-		lblTelefono.setBounds(42, 110, 53, 14);
+		JLabel lblTelefono = new JLabel("Tel\u00E9fono:");
+		lblTelefono.setBounds(101, 157, 53, 14);
 		getContentPane().add(lblTelefono);
 		
-		JLabel lblFechanac = new JLabel("Fecha Nac.");
-		lblFechanac.setBounds(42, 140, 53, 14);
+		JLabel lblFechanac = new JLabel("Fecha de nacimiento:");
+		lblFechanac.setBounds(101, 187, 117, 14);
 		getContentPane().add(lblFechanac);
 		
 		JLabel lblDatosIngre = new JLabel("Los datos ingresados fueron: ");
-		lblDatosIngre.setBounds(32, 250, 180, 14);
+		lblDatosIngre.setBounds(101, 260, 220, 20);
 		getContentPane().add(lblDatosIngre);
 		
 		JFormattedTextField frmtdtxtfldNombre = new JFormattedTextField();
+		frmtdtxtfldNombre.setBounds(228, 94, 140, 20);
 		frmtdtxtfldNombre.addKeyListener(new KeyAdapter() {
 		    @Override
 		    public void keyTyped(KeyEvent nom1) {
@@ -56,12 +57,10 @@ public class Ejercicio1 extends JFrame {
 		   
 		    }
 		});
-	   
-	
-		frmtdtxtfldNombre.setBounds(169, 50, 140, 20);
 		getContentPane().add(frmtdtxtfldNombre);
 		
 		JFormattedTextField frmtdtxtfldApellido = new JFormattedTextField();
+		frmtdtxtfldApellido.setBounds(228, 124, 140, 20);
 		frmtdtxtfldApellido.addKeyListener(new KeyAdapter() {
 		    @Override
 		    public void keyTyped(KeyEvent ape1) {
@@ -72,10 +71,10 @@ public class Ejercicio1 extends JFrame {
 		        
 		    }
 		});
-		frmtdtxtfldApellido.setBounds(169, 80, 140, 20);
 		getContentPane().add(frmtdtxtfldApellido);
 		
 		JFormattedTextField frmtdtxtfldTelefono = new JFormattedTextField();
+		frmtdtxtfldTelefono.setBounds(228, 154, 140, 20);
 		frmtdtxtfldTelefono.addKeyListener(new KeyAdapter() {
 		    @Override
 		    public void keyTyped(KeyEvent tel1) {
@@ -86,10 +85,10 @@ public class Ejercicio1 extends JFrame {
 		        
 		    }
 		});
-		frmtdtxtfldTelefono.setBounds(169, 110, 140, 20);
 		getContentPane().add(frmtdtxtfldTelefono);
 		
 		JFormattedTextField frmtdtxtfldFechaN = new JFormattedTextField();
+		frmtdtxtfldFechaN.setBounds(228, 184, 140, 20);
 		frmtdtxtfldFechaN.addKeyListener(new KeyAdapter() {
 		    @Override
 		    public void keyTyped(KeyEvent fecha1) {
@@ -100,11 +99,10 @@ public class Ejercicio1 extends JFrame {
 		        
 		    }
 		});
-		frmtdtxtfldFechaN.setBounds(169, 140, 140, 20);
 		getContentPane().add(frmtdtxtfldFechaN);
 		
 		JButton btnMostrar = new JButton("Mostrar");
-        btnMostrar.setBounds(220, 170, 89, 30);
+		btnMostrar.setBounds(279, 214, 89, 30);
         getContentPane().add(btnMostrar);
         btnMostrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -142,7 +140,7 @@ public class Ejercicio1 extends JFrame {
                 	
                 	String datos="Nom y ape: " + frmtdtxtfldNombre.getText() + " " +frmtdtxtfldApellido.getText()
                 	+ " - tel: " + frmtdtxtfldTelefono.getText() + " - Fecha " + frmtdtxtfldFechaN.getText();
-                	lblDatosIngre1.setBounds(32, 280, 450, 14);
+                	lblDatosIngre1.setBounds(101, 275, 400, 40);
                 	lblDatosIngre1.setText(datos);
                 	getContentPane().add(lblDatosIngre1);
                 	

@@ -64,7 +64,7 @@ public class Ejercicio2 extends JFrame {
 		lblNotasDelEstudiante.setVerticalAlignment(SwingConstants.TOP);
 		lblNotasDelEstudiante.setForeground(new Color(0, 0, 0));
 		lblNotasDelEstudiante.setBackground(new Color(0, 0, 0));
-		lblNotasDelEstudiante.setBounds(41, 65, 105, 14);
+		lblNotasDelEstudiante.setBounds(41, 65, 121, 14);
 		panel.add(lblNotasDelEstudiante);
 		
 		JPanel panel_1 = new JPanel();
@@ -138,7 +138,7 @@ public class Ejercicio2 extends JFrame {
 		label.setVerticalAlignment(SwingConstants.TOP);
 		label.setForeground(Color.BLACK);
 		label.setBackground(Color.BLACK);
-		label.setBounds(41, 290, 105, 14);
+		label.setBounds(41, 290, 121, 14);
 		panel.add(label);
 		
 		btnCalcular.addActionListener(new ActionListener() {
