@@ -135,7 +135,16 @@ public class Ejercicio3 extends JFrame {
 					if(esNumerico( horas)== false) horas ="";
 					
 					if(msjRadios == "" || msjChecks =="" || horas =="")	validar(false);
-					else mostrarInfo(msjRadios, msjChecks, horas);
+					else {mostrarInfo(msjRadios, msjChecks, horas);
+					
+					grupoRadios.clearSelection();
+					textField.setText("");
+					checkProg.setSelected(false);
+					checkAdmin.setSelected(false);
+					checkDisGra.setSelected(false);
+					
+					
+					}
 					
 				}catch(Exception e1) {
 				}
